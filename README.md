@@ -1,3 +1,3 @@
 #Rookie
 
-Made By Kim Dong Hui & Gang Jun Ha
+Made By Kim Dong Hui, Gang Jun Ha
