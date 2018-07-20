@@ -14,6 +14,7 @@ if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(ROOT_DIR.path('.env')))
 
+
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
@@ -39,7 +40,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///rookie'),
+    'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'rookie',
+    'USER': 'rookie',
+    'PASSWORD': 'doongji0806',
+    'HOST': 'localhost',
+    'PORT': '',
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -71,6 +79,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'rookie.users.apps.UsersAppConfig',
+    'rookie.musics.apps.MusicsConfig',
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

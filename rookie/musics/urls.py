@@ -10,3 +10,15 @@ urlpatterns = [
        name = 'view_top100'
    )
 ]
+urlpatterns = [
+   url(
+       regex=r'^List/$',
+       view=views.ListView.as_view(),
+       name = 'List_View'
+   ),
+   url(
+       regex=r'^feed/$',
+       view=views.Feed.as_view(),
+       name = 'Play_Lists'
+   )
+]
