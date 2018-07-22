@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls import include, url
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -14,6 +15,10 @@ urlpatterns = [
     ),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
+    path(
+        "musics/",
+        include("rookie.musics.urls", namespace="musics"),
+    ),
     # User management
     path(
         "users/",

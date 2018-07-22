@@ -68,9 +68,11 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_framework',
+    'taggit',
 ]
 LOCAL_APPS = [
     'rookie.users.apps.UsersAppConfig',
+    'rookie.musics.apps.MusicsConfig',
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -235,6 +237,6 @@ ACCOUNT_ADAPTER = 'rookie.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = 'rookie.users.adapters.SocialAccountAdapter'
 
-
+TAGGIT_CASE_INSENSITIVE = True
 # Your stuff...
 # ------------------------------------------------------------------------------
