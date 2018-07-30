@@ -2,7 +2,6 @@ from django.db import models
 from rookie.users import models as user_models
 from taggit.managers import TaggableManager
 # Create your models here.
-
 class TimeStamp(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
