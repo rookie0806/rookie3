@@ -31,8 +31,12 @@ class Feed(APIView):
             song_lists = following_user.lists.all()[:3]
             for song_list in song_lists:
                 play_lists.append(song_list)
+        
+        my_lists = user.lists.all()[:2]
+        for my_list in my_lists:
+            play_lists.append(my_list)
 
-        sorted_list = sorted(play_lists,key=get_key)
+        sorted_list = sorted(play_lists,key=get_key,reverse=True)
         serializer = serializers.ListSerializer(sorted_list,many=True)
 
         return Response(serializer.data)

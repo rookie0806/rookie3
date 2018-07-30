@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from . import models
-
+from rookie.musics import serializers as musics_serializers
 class UserListSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -13,6 +13,9 @@ class UserListSerializer(serializers.ModelSerializer):
 
 class UserProfileSerializer(serializers.ModelSerializer):
 
+    lists_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
+    following_count = serializers.ReadOnlyField()
     class Meta:
         model = models.User
         fields = (
@@ -23,4 +26,5 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'followers_count',
             'following_count',
         )
+
 

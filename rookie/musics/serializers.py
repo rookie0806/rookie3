@@ -22,7 +22,10 @@ class ListSerializer(serializers.ModelSerializer):
         model = models.List
         fields = (
             'List_name',
+            'List_serial',
             'Song_list',
             'List_creator',
             'created_at'
         )
+
+
